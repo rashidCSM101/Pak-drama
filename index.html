@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pakistani Classical Drama Archive</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="left-section">
+            <i class="fas fa-bars"></i>
+            <h1>Pakistani Drama</h1>
+        </div>
+        <div class="middle-section">
+            <form class="search-bar" onsubmit="return false;">
+                <input type="text" id="searchInput" placeholder="Search dramas...">
+                <select id="searchType">
+                    <option value="name">Drama Name</option>
+                    <option value="year">Year</option>
+                    <option value="actor">Actor</option>
+                    <option value="producer">Producer</option>
+                    <option value="director">Director</option>
+                    <option value="writer">Writer</option>
+                </select>
+                <button onclick="performSearch()"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="nav-link active" onclick="filterByCategory('all')">
+                <i class="fas fa-home"></i>
+                <span>All Dramas</span>
+            </div>
+            <div class="nav-link" onclick="filterByCategory('comedy')">
+                <i class="fas fa-laugh"></i>
+                <span>Comedy</span>
+            </div>
+            <div class="nav-link" onclick="filterByCategory('drama')">
+                <i class="fas fa-theater-masks"></i>
+                <span>Drama Serials</span>
+            </div>
+            <div class="nav-link" onclick="filterByCategory('telefilm')">
+                <i class="fas fa-film"></i>
+                <span>Telefilms</span>
+            </div>
+            <div class="nav-link" onclick="filterByCategory('other')">
+                <i class="fas fa-folder"></i>
+                <span>Others</span>
+            </div>
+        </nav>
+
+        <!-- Videos Grid -->
+        <div class="videos-container">
+            <!-- Drama cards will be dynamically added here -->
+        </div>
+
+        <!-- Similar Results Section -->
+        <div id="similarResults" class="similar-results">
+            <h3>Similar Results:</h3>
+            <div id="similarList"></div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
